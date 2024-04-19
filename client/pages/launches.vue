@@ -62,7 +62,7 @@
 						></v-icon>
 					</v-btn>
 
-					<v-select v-model="year" :items="['',...years]" label="Filter by Year" variant="outlined" dense
+					<v-select v-model="year" :items="['',...years]" label="Filter by Year" variant="solo-filled" dense
 						class="mt-5"></v-select>
 
 				</div>
@@ -78,7 +78,7 @@
 					xl="3"
 				>
 				<v-sheet border>
-					<iframe :src="item?.raw?.links?.video_link && item.raw.links.video_link.split('watch?')[0]+'embed/'+item.raw.links.video_link.split('watch?v=')[1]" height="300px" width="100%" title="Iframe Example"></iframe>
+					<iframe :src="getVideoLink(item?.raw?.links?.video_link)" height="300px" width="100%" title="Iframe Example"></iframe>
 					
 					<v-list-item
 						:title="item.raw.mission_name"
@@ -92,7 +92,7 @@
 								<NuxtLink :to="'/rocketdetails/'+item.raw.rocket.rocket.id">{{ item.raw.mission_name }}</NuxtLink>
 							</strong>
 							<v-btn
-							text
+							text="true"
 							class="ma-2"
 							color="primary"
 							:to="'/rocketdetails/'+item.raw.rocket.rocket.id"
@@ -168,10 +168,9 @@
 
 import { ref, computed } from 'vue';
 import useSort from '../composables/useSort';
-import useFilter from '../composables/useFilter';
 import useFilterByYear from '../composables/useFilterByYear'
 
-	const itemsPerPage = ref(10)
+	const itemsPerPage = ref(12)
 
 	const query = gql`
 	query Launches {
@@ -224,16 +223,9 @@ import useFilterByYear from '../composables/useFilterByYear'
 		}[]
 	}>(query);
 	let launches = computed(() => data.value?.launches ?? []);
-	let launchesData = launches;
 
 	const sortData = (order: string) => {
 		let data = useSort(launches, order);
-	}
-
-	const filterData = (event: any) => {
-		console.log(event);
-		launches = filteredLaunches;
-		// let data = useFilter(launches, year);
 	}
 
 	const { years, selectedYear, filteredLaunches } = useFilterByYear(launches);
@@ -251,6 +243,17 @@ import useFilterByYear from '../composables/useFilterByYear'
 		let day = date.getDate();
 		let year = date.getFullYear();
 		return month + " - " + day + " - " + year;
-	}	
+	}
+
+	const getVideoLink = (link?: string) => {
+		if(link?.includes('youtu.be')){
+			let linkData = link && link.split('youtu.be/');
+			return `https://www.youtube.com/embed/${linkData[1]}`;	
+		}else{
+			let linkData = link && link.split('watch?v=');
+			let finalLink = linkData && linkData[0]+'embed/'+linkData[1];
+			return finalLink;
+		}
+	}
 
 </script>

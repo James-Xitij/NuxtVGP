@@ -118,5 +118,4 @@ const removeAll = () => {
 	favourite.removeAllFavourite();
 }
 
-
 </script>

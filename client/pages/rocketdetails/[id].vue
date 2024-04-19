@@ -23,107 +23,108 @@
 			</div>
 		</div>
 
-			<v-container class="main-container">
-				<v-card class="mb-4 card-container">
-					<v-card-title class="card-title">
+			<v-container>
+				<v-card elevation="16" style="padding: 20px !important;">
+					<v-card-title>
 						<h2>{{ rocket.name }}</h2>
 					</v-card-title>
-					<v-card-text style="padding: 0;">
+					<v-card-text>
 						<v-list>
 							<v-list-item>
 								<v-list-item-content>
-									<v-list-item-subtitle class="discription">{{ rocket?.description
-										}}</v-list-item-subtitle>
+									<v-list-item-subtitle class="d-block text-medium-emphasis">{{ rocket?.description }}</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
 							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">Active</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.active ? 'Yes' : 'No'
-										}}</v-list-item-subtitle>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">Active</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.active ? 'Yes' : 'No' }}</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
+							<v-divider></v-divider>
 
 							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">Company</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.company
-										}}</v-list-item-subtitle>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">Company</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.company }}</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
-							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">Country</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.country
-										}}</v-list-item-subtitle>
-								</v-list-item-content>
-							</v-list-item>
+							<v-divider></v-divider>
 
 							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">First Flight</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.first_flight
-										}}</v-list-item-subtitle>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">Country</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.country }}</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
-							<v-card-title class="card-sub-title">
+							<v-divider></v-divider>
+
+							<v-list-item>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">First Flight</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.first_flight }}</v-list-item-subtitle>
+								</v-list-item-content>
+							</v-list-item>
+							<v-divider></v-divider>
+
+							<v-card-title class="mt-5">
 								<h4>Dimensions</h4>
 							</v-card-title>
 							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">Diameter (feet)</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.diameter?.feet
-										}}</v-list-item-subtitle>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">Diameter (feet)</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.diameter?.feet }}</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
+							<v-divider></v-divider>
 
 							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">Diameter (meters)</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.diameter?.meters
-										}}</v-list-item-subtitle>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">Diameter (meters)</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.diameter?.meters }}</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
+							<v-divider></v-divider>
 
 							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">Height (feet)</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.height?.feet
-										}}</v-list-item-subtitle>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">Height (feet)</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.height?.feet }}</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
+							<v-divider></v-divider>
 
 							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">Height (meters)</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.height?.meters
-										}}</v-list-item-subtitle>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">Height (meters)</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.height?.meters }}</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
-							<v-card-title class="card-sub-title">
+							<v-divider></v-divider>
+
+							<v-card-title class="mt-5">
 								<h4>Cost</h4>
 							</v-card-title>
 							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">Cost per Launch</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.cost_per_launch
-										}}</v-list-item-subtitle>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">Cost per Launch</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.cost_per_launch }}</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
+							<v-divider></v-divider>
 
 							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">Success Rate (%)</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.success_rate_pct
-										}}%</v-list-item-subtitle>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">Success Rate (%)</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.success_rate_pct }}%</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
+							<v-divider></v-divider>
 
 							<v-list-item>
-								<v-list-item-content class="item">
-									<v-list-item-title class="card-item-title">Stages</v-list-item-title>
-									<v-list-item-subtitle class="card-item-ans">{{ rocket?.stages
-										}}</v-list-item-subtitle>
+								<v-list-item-content class="d-flex justify-space-between align-center">
+									<v-list-item-title class="text-medium font-weight-bold d-block ">Stages</v-list-item-title>
+									<v-list-item-subtitle class="text-sm text-grey font-weight-bold text-align-end">{{ rocket?.stages }}</v-list-item-subtitle>
 								</v-list-item-content>
 							</v-list-item>
 
@@ -208,7 +209,7 @@
 		favourite.remove(rocket);
 	}
 
-	const isDisplayButton = (id: string) => {
+	const isDisplayButton = (id: String) => {
 		let data = favourite.getFavouritesList.filter((favourite: any) => {
 			return favourite._value.id === id
 		});
@@ -216,72 +217,3 @@
 	}
 	
 </script>
-
-
-<style scoped>
-.main-container {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.card-container {
-	box-shadow: none;
-	width: 70%;
-	margin: auto;
-}
-
-.item {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-bottom: 1px solid black;
-	padding: 10px;
-	/* background-color: rgb(193, 247, 247); */
-}
-
-.card-title {
-	font-weight: 600;
-}
-
-.card-item-title {
-	font-size: medium;
-	font-weight: 600;
-	display: block;
-	width: 50%;
-}
-
-.card-item-ans {
-	font-size: small;
-	font-weight: 600;
-	width: 100%;
-	opacity: 1;
-	text-align: end;
-	color: gray;
-}
-
-.card-sub-title {
-	margin-top: 40px;
-}
-
-.discription {
-	width: 100%;
-	display: block;
-	font-size: medium;
-	color: rgb(70, 70, 70);
-	opacity: 1;
-	line-height: 20px;
-}
-
-@media (max-width:776px) {
-	.card-container {
-		width: 100%;
-	}
-
-	.card-item-title {
-		width: 100%;
-	}
-}
-</style>
